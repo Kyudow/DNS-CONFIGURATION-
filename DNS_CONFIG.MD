@@ -4,7 +4,7 @@ GITHUB REPOSITORY: https://github.com/Rivanyte/DNS-CONFIG
 •	Click the button “<> Code” and click Download Zip
 
 •	Save it as default name
-[2.1]<Image placeholder>
+
 •	verify if the download is finished
 [3.1]<Image placeholder>
 
