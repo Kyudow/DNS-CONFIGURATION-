@@ -8,7 +8,9 @@ GITHUB REPOSITORY: https://github.com/Rivanyte/DNS-CONFIG
 <img width="936" height="563" alt="image" src="https://github.com/user-attachments/assets/ea8c2992-23ee-4c4f-8b3d-f8e5f8b34719" />
 
 •	verify if the download is finished
+
 <img width="312" height="101" alt="image" src="https://github.com/user-attachments/assets/e9aa5ac6-9f9f-4c5f-baea-040811144e14" />
+
 
 
 Step 1: Creating Windows Virtual Machine
