@@ -382,6 +382,8 @@ Then click Replace All
 •	Click the green play button or F5 key to run the selected script
 •	we don’t need to save the .ps1 file, if you want to save 1st click CTRL+S before running the script
 
+[https://discordapp.com/channels/845330743513317376/1543423664303644832/1543423680003051581](https://cdn.discordapp.com/attachments/1543423664303644832/1543423680049184918/a8479498fd971531cc9d4444947b54a42d6f6b09d01a8fdf098e47c3cdaec8a55005cad8219cb2c33d20b0a989eb5e305ebb6276582a9358a8ff369f043b52ec05e3f53e24ca76c7aecec6b2b2021010faf945315b8c3df044558fdd8d011cb875394684.png?ex=6a94d0d0&is=6a937f50&hm=f4e720ca2c2aa78d97bba58a444785617afeff0fd6f6fa33148579e1d4d41d96&)
+
 
 
 •	After Running the script make sure that there are no error red lines or red texts
