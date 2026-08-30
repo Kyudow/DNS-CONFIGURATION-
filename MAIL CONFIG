@@ -1,0 +1,357 @@
+Make sure that you are finished configuring and managing DNS and Webserver before Proceeding to Mail Configuration
+
+KEY CONCEPT
+📚 Lesson: Understanding DNS, Web Server, and Email System (Lab Overview)
+🧠 What are we building?
+In this lab, we are creating a mini version of the internet inside our network. 
+This helps us understand how websites, emails, and domain names work together in real life.
+
+🔑 The 3 Main Components
+🌐 1. DNS (Domain Name System) – “The Phonebook”
+DNS translates human-friendly names into IP addresses.
+•	Example:
+o	www.mylab.local → 192.168.1.10
+o	mail.mylab.local → 192.168.1.20
+👉 Without DNS, users would need to remember IP addresses instead of names.
+
+🌍 2. Web Server (IIS) – “The Website Host”
+This is where websites are stored and displayed.
+•	When a user visits a domain (like www.mylab.local), the web server:
+o	Receives the request
+o	Shows the webpage
+👉 In this lab, we created a sample or fake website for testing and learning.
+📬 3. Mail Server (hMailServer) – “The Post Office”
+This system handles email sending and receiving.
+•	It:
+o	Creates email accounts (e.g., user@mylab.local)
+o	Sends emails (SMTP)
+o	Receives emails (IMAP/POP3)
+👉 It works in the background and stores all messages.
+
+🖥️ 4. Mail Client (Thunderbird) – “The Email App”
+This is what users interact with.
+•	Used to:
+o	Send emails
+o	Read emails
+o	View inbox
+👉 It connects to the mail server to display messages.
+
+Step 1: Installing hMailServer on Windows Server Virtual Machine
+•	On your Virtual Machine, we added/copied and pasted the Apps necessary for mail configuration
+•	hMailServer and Thunderbird
+•	Navigate to your C: Drive and locate the apps
+[1.1]<Image placeholder>
+•	Next we will install hMailServer
+•	double click the application for hMailServer
+•	then a new window will show, click next
+[2.1]<Image placeholder>
+•	Accept the License Terms
+•	Click “ I accept the agreement “ and click Next >
+[3.1]<Image placeholder>
+•	Click Next >
+[4.1]<Image placeholder>\
+•	Click Next >
+[5.1]<Image placeholder>
+•	Click Next >
+[6.1]<Image placeholder>
+•	Click Next >
+[7.1]<Image placeholder>
+
+Be Careful when typing password for hMailServer, make sure to remember your typed password if not remembered we can’t proceed to configuring hMailServer
+•	For easy remembrance of password, we can use Rivan password for “pass” or “C1sc0123”
+[8.1]<Image placeholder>
+•	On the image below we used C1sc0123
+•	Click Next >
+[9.1]<Image placeholder>
+•	Finally click Install
+[10.1]<Image placeholder>
+•	Wait for the installation to finish
+[11.1]<Image placeholder>
+•	Click Finish
+[12.1]<Image placeholder>
+
+Step 2: Configuring hMailServer
+•	Click localhost under Hostname, and then click Connect
+[13.1]<Image placeholder>
+•	Enter hMailServer password “C1sc0123”
+•	then click OK
+[14.1]<Image placeholder>
+•	A new TAB will open for connected Administrator - localhost
+[15.1]<Image placeholder>
+
+Step 2.1: Removing Auto-ban Session in hMailServer
+Why we disable Auto-ban in this setup
+The Auto-ban feature is a security mechanism. It automatically blocks (bans) an IP address if there are too many failed login attempts within a short time. This helps protect against brute-force attacks.
+However, in a learning environment:
+o	We make frequent mistakes 
+While testing email clients, SMTP/IMAP settings, or passwords, it’s normal to enter incorrect credentials multiple times.
+o	Shared networks cause unintended bans 
+We may be working from the same network (same public IP). If one student triggers the limit, everyone on that network can get blocked.
+o	It interrupts learning 
+Once banned, connections will fail without clear feedback, making troubleshooting confusing and frustrating.
+•	To fix this, go to Settings, under settings click Advanced, under Advanced click Auto-ban
+[16.1]<Image placeholder>
+•	Uncheck the enabled button for Auto-ban then click Save
+[17.1]<Image placeholder>
+•	The enabled button should now be disabled
+[18.1]<Image placeholder>
+
+Step 2.2: Adding Domain on hMailServer
+•	Click the Star Icon on the Welcome button, then click Add domain…
+[19.1]<Image placeholder>
+•	we need to add the domain of our added DNS
+•	type in under domain:
+•	“bdo.ph.com”
+[20.1]<Image placeholder>
+•	Under your created domains, we need to add an account for our email to work
+•	Click Accounts → then click Add
+[21.1]<Image placeholder>
+•	Under Address create your own preferred Address 
+•	for this Lab we will use cs which stands for Customer Support
+•	then on the password make it not forgettable, for instance “pass”
+[22.1]<Image placeholder>
+•	After clicking away or interacting with another field, the password will display as << Encrypted >>.
+•	This indicates the password has been securely stored and cannot be viewed in plain text.
+•	Set Maximum size (MB) to 100 to define the mailbox storage limit.
+•	This limits the user’s mailbox capacity to 100 MB.
+•	Click Save.
+[23.1]<Image placeholder>
+
+•	When hMailServer Administrator shows the warning “The password appears to be weak”, click Yes.
+[24.1]<Image placeholder>
+
+•	Confirm the new account appears under Accounts in the domain list.
+•	Add another account for another user which is you
+•	In hMailServer Administrator, click Add… under Accounts.
+[25.1]<Image placeholder>
+
+•	Enter a new Address
+•	Enter a password (you may use pass for demonstration).
+[26.1]<Image placeholder>
+
+•	After clicking away or interacting with another field, the password will display as << Encrypted >>.
+•	This indicates the password has been securely stored and cannot be viewed in plain text.
+•	Set Maximum size (MB) to 100 to define the mailbox storage limit.
+•	This limits the user’s mailbox capacity to 100 MB.
+•	Click Save.
+[27.1]<Image placeholder>
+
+
+•	If prompted about a weak password, click Yes.
+[28.1]<Image placeholder>
+•	Confirm the new account appears under Accounts.
+[29.1]<Image placeholder>[30.1]<Image placeholder>
+
+
+Step 3: Installing Thunderbird
+•	Under C Drive, locate Thunderbird Setup
+•	Double Click it, and run the exe file
+[31.1]<Image placeholder>
+
+•	wait for the extraction to finish
+[32.1]<Image placeholder>
+•	Click Next > after extracting
+[33.1]<Image placeholder>
+
+•	On setup type
+•	Click Standard and then Click Next >
+[34.1]<Image placeholder>
+
+•	Click Install
+[35.1]<Image placeholder>
+
+•	Wait for the installation to finish
+[36.1]<Image placeholder>
+
+•	After the installation click finish
+[37.1]<Image placeholder>
+
+Step 4: Configuring Thunderbird
+•	Open Mozilla Thunderbird.
+[38.1]<Image placeholder>
+
+•	In the Account Setup window, enter the Customer email.
+•	Enter the email address you created (e.g., cs@bdo.ph.com).
+•	Enter the password (e.g., pass).
+•	then Click “Configure manually”
+[39.1]<Image placeholder>
+
+📥 Incoming Server (IMAP)
+•	Protocol: IMAP
+•	Hostname: imap.bdo.ph.com
+•	Port: (Leave it blank)
+•	Connection Security: Autodetect
+•	Authentication Method: Autodetect
+•	Username: your full email (e.g., cs@bdo.ph.com)
+Outgoing Server (SMTP)
+•	Hostname: imap.bdo.ph.com 
+•	Port: (Leave it blank)
+•	Connection Security:  Autodetect
+•	Authentication Method: Autodetect
+•	Username: your full email (e.g., cs@bdo.ph.com)
+
+o	Then click re-test
+[40.1]<Image placeholder>
+
+🔄 After Clicking “Re-test”
+•	Thunderbird will auto-detect correct settings
+•	Ports will change automatically:
+o	IMAP → 143
+o	SMTP → 465 or 587
+•	Connection Security updates:
+o	Changes from None → SSL/TLS (or STARTTLS)
+•	A green message appears:
+o	✔ “The following settings were found by probing the given server”
+•	Click Done
+[41.1]<Image placeholder>
+
+
+⚠️ Security Warning
+•	Message shows:
+o	Server does not use encryption
+o	Your data may be unsafe
+[42.1]<Image placeholder>
+If instructed to proceed:
+•	✔ Check “I understand the risks”
+•	Click “Confirm”
+[43.1]<Image placeholder>
+
+•	Your account should be successfully created
+•	Click Finish
+[44.1]<Image placeholder>
+
+
+Step 4.1: Creating a 2nd Email
+•	Click the ☰ (hamburger menu) in the top-right corner
+[45.1]<Image placeholder>
+
+•	Select New Account
+•	Click Email
+[46.1]<Image placeholder>[47.1]<Image placeholder>
+
+•	The Account Hub / Add your email address screen will open
+•	If the interface looks different, that’s normal
+•	Thunderbird updates automatically, so the UI may vary slightly but the steps remain the same
+•	Enter your details (name, email, password)
+[48.1]<Image placeholder>
+
+•	Enter your 2nd created email under the DNS we created on hMailServer
+•	then Click “MANUAL CONFIGURATION”
+[49.1]<Image placeholder>
+
+📥 Incoming Server (IMAP)
+•	Protocol: IMAP
+•	Hostname: imap.bdo.ph.com
+•	Port: (Leave it blank)
+•	Connection Security: Autodetect
+•	Authentication Method: Autodetect
+•	Username: your full email (e.g., cs@bdo.ph.com)
+o	Click Continue
+[50.1]<Image placeholder>
+
+Outgoing Server (SMTP)
+•	Hostname: imap.bdo.ph.com 
+•	Port: (Leave it blank)
+•	Connection Security:  Autodetect
+•	Authentication Method: Autodetect
+•	Username: your full email (e.g., cs@bdo.ph.com)
+[51.1]<Image placeholder>
+
+o	Then click test
+[52.1]<Image placeholder>
+
+•	Wait for the testing result to finish
+[53.1]<Image placeholder>
+
+🔄 After Clicking “Re-test”
+•	Thunderbird will auto-detect correct settings
+•	Ports will change automatically:
+•	A green message appears:
+o	✔ “The following settings were found by probing the given server”
+•	Click Continue
+[54.1]<Image placeholder>
+
+•	Type Password created which is pass
+[55.1]<Image placeholder>
+
+•	Then click Finish
+[56.1]<Image placeholder>
+
+•	After that 2 accounts should be registered on Thunderbird under our domain name bdo.ph.com
+[57.1]<Image placeholder>
+
+
+47
+Step 5: Creating and Configuring Phishing Email
+•	under cs@bdo.ph.com
+•	create or write a new message
+[58.1]<Image placeholder>
+
+•	Set the “From” address
+o	Enter: Customer <cs@bdo.ph.com>
+o	Purpose: Spoof a trusted sender (no real SMTP auth needed in local lab)
+•	Set the “To” address
+o	Use: teb@bdo.ph.com (victim’s local mailbox)
+[59.1]<Image placeholder>
+
+Sample PHISHING EMAIL
+•	Write a compelling subject line
+o	Example: Action Required: Unusual Login Attempt
+o	Goal: Create urgency and fear (common phishing trigger)
+Dear BDO Online Banking Customer,
+
+We detected a new device trying to access your account from an unrecognized IP address.
+
+Location: Pasig City (unverified)
+Time: Today, 10:23 AM
+Device: Windows 11 · Chrome 131
+
+If this was NOT you, please verify your account immediately to prevent suspension:
+
+Verify Your Account Now
+
+or click the link below
+
+https://www.bdo.ph.com
+
+(Clicking the link will open our Secure Verification Portal)
+
+Failure to verify within 24 hours will result in temporary account restriction.
+
+Thank you,
+BDO Digital Banking Team
+
+This is an automated message. Please do not reply.
+•	Craft the email body
+o	Include: fake security alert, fake location, fake deadline
+o	Add a call-to-action button or link (e.g., “Verify Your Account”)
+•	Insert the phishing link
+o	Highlight text → then click Ctrl + K then insert local IIS fake website
+[60.1]<Image placeholder>[61.1]<Image placeholder>
+o	URL: your local IIS fake site (e.g., "https://bdo.ph.com/" or "https://www.bdo.ph.com/"
+[62.1]<Image placeholder>
+
+[63.1]<Image placeholder>
+
+•	Send the email
+o	Keep all traffic inside the VM
+[64.1]<Image placeholder>
+
+•	Wait for the message to sent
+[65.1]<Image placeholder>
+
+•	Click your 2nd created account
+[66.1]<Image placeholder>
+•	Under Inbox check for messages
+[67.1]<Image placeholder>
+
+•	View the message, click the link
+[68.1]<Image placeholder>
+
+•	If we click both links it now should appear the fake website we created
+[69.1]<Image placeholder>
+
+Now we are finished configuring DNS and Mail Configuration
+
+Now re-do the Mail configuration using bpi.ph.com and gcash.ph.com 
+
